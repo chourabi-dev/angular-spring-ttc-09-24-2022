@@ -1,0 +1,78 @@
+<!-- <h1> {{ title }} </h1>
+
+
+<p>
+  {{   5*3   }}
+</p>
+
+<p>
+  {{ year }}
+</p>
+
+
+<p>
+  {{ employees }}
+</p>
+
+
+<p>
+  {{ today }}
+</p>
+
+<p>
+  {{ somme( 5, 9 ) }}
+</p>
+
+ -->
+<!-- ************************************** ngFor  ngIf *********************************** -->
+
+<!-- <ul>
+  <li *ngFor="let employee of employees;  let j = index;  "  > 
+    <h3> {{ employee.fullname }} N°: {{j}} </h3>
+    <p>
+      <small> {{ employee.email }} </small>
+    </p>
+    <p>
+      <small> {{ employee.phone }} </small>
+    </p>
+    
+  </li>
+</ul> -->
+
+
+<!--<div   *ngIf="  showBloc  " >
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quas veniam quam ipsam repellendus quo, officia similique facere modi voluptatum quaerat culpa, tenetur ex quos accusamus hic minima, obcaecati autem!
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quas veniam quam ipsam repellendus quo, officia similique facere modi voluptatum quaerat culpa, tenetur ex quos accusamus hic minima, obcaecati autem!
+  </p>
+  <p>
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum quas veniam quam ipsam repellendus quo, officia similique facere modi voluptatum quaerat culpa, tenetur ex quos accusamus hic minima, obcaecati autem!
+  </p>
+  
+</div>-->
+
+
+
+<ul>
+  <li *ngFor="let employee of employees;  let j = index;  "  > 
+    
+    <!--
+    <h3 *ngIf="  employee.year < 2010  " class="old-employee"> {{ employee.fullname }} N°: {{j}} </h3>
+    <h3 *ngIf="  employee.year > 2010  " class="new-employee"> {{ employee.fullname }} N°: {{j}} </h3>
+    -->
+    
+
+    <h3 class="x y z"  [ngClass]="  employee.year > 2010 ?  'new-employee' :  'old-employee'  "  > {{ employee.fullname }} N°: {{j}} </h3>
+
+
+    <p>
+      <small> {{ employee.email }} </small>
+    </p>
+    <p>
+      <small> {{ employee.phone }} </small>
+    </p>
+    
+  </li>
+</ul>
