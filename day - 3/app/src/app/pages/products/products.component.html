@@ -1,0 +1,12 @@
+<app-navbar></app-navbar>
+
+
+<h1>Products page</h1>
+
+<ul>
+    <li *ngFor="let p of products">
+        {{ p.name }} <br>
+
+        <button  (click)="addToCart(p)"  >ajouter au panier</button>
+    </li>
+</ul>

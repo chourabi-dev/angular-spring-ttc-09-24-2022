@@ -1,0 +1,15 @@
+<div class="container mt-5">
+
+
+    <div class="row">
+      
+      <div class="col-12 mb-4"   *ngFor="let n of news">
+        <app-feed  [nbrLikes]="n.nbrLikes" [didLike]="n.didLike"  [name]="n.name"  [content]="n.content"    ></app-feed>
+      </div>
+      
+  
+  
+  
+    </div>
+  
+  </div>
