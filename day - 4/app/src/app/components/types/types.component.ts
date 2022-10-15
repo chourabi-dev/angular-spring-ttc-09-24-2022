@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { promise } from 'protractor';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -24,6 +25,50 @@ export class TypesComponent implements OnInit {
 
   ngOnInit(): void {
   }
+
+/*
+
+  connectToDatabase(){
+
+    // { database : "ok" }
+
+    const db  = new Promise( (   successFN ,errorFN   )=>{
+      setTimeout(()=>{
+
+
+        successFN( { database : "ok" }  )
+
+      },3000)
+    });
+
+
+    return db;
+
+  }
+
+
+
+
+  initConnectioWithDataBase(){
+
+    this.connectToDatabase().then((db)=>{
+      console.log(db);
+      
+    }).catch(()=>{
+      !!!
+    })
+  }*/
+
+
+
+
+
+
+
+
+
+
+
 
 
   initCamera(){
@@ -81,7 +126,7 @@ export class TypesComponent implements OnInit {
 
 
 
-  /**************************************************************** */
+  /***************************** *********************************** */
 
 
   trackUser(){
@@ -110,9 +155,6 @@ export class TypesComponent implements OnInit {
       
      } )
   }
-
-
-
 
 
 }
