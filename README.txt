@@ -50,3 +50,8 @@ spring.datasource.username=root
 spring.datasource.password=
 
 
+
+SPRING QUERY SEARCH
+
+https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#query-by-example
+
