@@ -35,3 +35,18 @@ go to angular.json and update styles array
 ** create pipes
 
 ng g p pipe_name
+
+
+
+
+
+
+-------------------------------------------------
+SPRING
+
+spring.jpa.hibernate.ddl-auto=update
+spring.datasource.url=jdbc:mysql://localhost:3306/ttcdemonightgroup?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC&createDatabaseIfNotExist=true
+spring.datasource.username=root
+spring.datasource.password=
+
+
