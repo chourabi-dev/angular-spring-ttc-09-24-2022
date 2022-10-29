@@ -1,0 +1,54 @@
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Add new Client</h1>
+    <a routerLink="/clients" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-arrow-left fa-sm text-white-50"></i> Back</a>
+</div>
+
+
+
+<div class="mt-5">
+    <div class="card">
+        <div class="card-body">
+
+            
+            <form [formGroup]="form" (ngSubmit)="saveData()">
+
+                <div class="form-group mb-3">
+                    <label for="">Fullname</label>
+                    <input type="text" class="form-control" formControlName="fullname">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="">Email</label>
+                    <input type="text" class="form-control" formControlName="email">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="">Address</label>
+                    <input type="text" class="form-control" formControlName="address">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="">CIN</label>
+                    <input type="text" class="form-control" formControlName="cin">
+                </div>
+
+                <div class="form-group mb-3">
+                    <button type="submit" class="btn btn-primary" [disabled]="! form.valid" >Save</button>
+                </div>
+
+
+                <div class="alert alert-success" *ngIf="successMessage != '' ">
+                    {{ successMessage }}
+                </div>
+
+                <div class="alert alert-danger" *ngIf="errorMessage != '' ">
+                    {{ errorMessage }}
+                </div> 
+                
+                
+                
+            </form>
+            
+
+
+             
+        </div>
+    </div>
+</div>
