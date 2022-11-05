@@ -1,0 +1,69 @@
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Add new vehicule</h1>
+    <a routerLink="/vehicules" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-arrow-left fa-sm text-white-50"></i> Back</a>
+</div>
+
+
+
+<div class="mt-5">
+    <div class="card">
+        <div class="card-body">
+
+            
+            <form [formGroup]="form" (ngSubmit)="saveData()">
+
+                   
+
+                <div class="form-group mb-3">
+                    <label for="">mark</label>
+                    <input type="text" class="form-control" formControlName="mark">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="">model</label>
+                    <input type="text" class="form-control" formControlName="model">
+                </div>
+               
+                <div class="form-group mb-3">
+                    <label for="">vin</label>
+                    <input type="text" class="form-control" formControlName="vin">
+                </div>
+                <div class="form-group mb-3">
+                    <label for="">matricul</label>
+                    <input type="text" class="form-control" formControlName="matricul">
+                </div>
+
+                <div class="form-group mb-3">
+                    <label for="">client</label>
+                    <select  class="form-control" formControlName="client">
+                        <option value="">Please choose a client</option>
+                        <option [value]="c.id" *ngFor="let c of clients">{{ c.fullname }}</option>
+                    </select>
+                </div>
+
+                
+                
+               
+
+                <div class="form-group mb-3">
+                    <button type="submit" class="btn btn-primary" [disabled]="! form.valid" >Save</button>
+                </div>
+
+
+                <div class="alert alert-success" *ngIf="successMessage != '' ">
+                    {{ successMessage }}
+                </div>
+
+                <div class="alert alert-danger" *ngIf="errorMessage != '' ">
+                    {{ errorMessage }}
+                </div> 
+                
+                
+                
+            </form>
+            
+
+
+             
+        </div>
+    </div>
+</div>

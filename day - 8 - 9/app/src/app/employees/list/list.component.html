@@ -1,0 +1,38 @@
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Employees</h1>
+    <a routerLink="/employees/add" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i> Add new</a>
+</div>
+
+
+
+<div class="mt-5">
+    <div class="card">
+        <div class="card-body">
+ 
+
+
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Fullname</th>
+                        <th>Email</th>
+                        <th>Address</th> 
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let e of employees">
+                        <td>{{e.id}}</td>
+                        <td>{{e.fullname}}</td>
+                        <td>{{e.email}}</td>
+                        <td>{{e.address}}</td>
+                        
+                        
+                        
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,93 @@
+package com.demottcspringboot.entites;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table( name="products" )
+public class Product {
+
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long id;
+	
+	@Column( name="product_title", nullable=false )
+	private String title;
+	
+	
+	@Column( name="product_price", nullable=false )
+	private float price;
+	
+	@Column( name="product_quantity", nullable=false )
+	private int quntity;
+	
+	
+	@Column( name="product_code", nullable=false )
+	private String code;
+
+
+	public long getId() {
+		return id;
+	}
+
+
+	public void setId(long id) {
+		this.id = id;
+	}
+
+
+	public String getTitle() {
+		return title;
+	}
+
+
+	public void setTitle(String title) {
+		this.title = title;
+	}
+
+
+	public float getPrice() {
+		return price;
+	}
+
+
+	public void setPrice(float price) {
+		this.price = price;
+	}
+
+
+	public int getQuntity() {
+		return quntity;
+	}
+
+
+	public void setQuntity(int quntity) {
+		this.quntity = quntity;
+	}
+
+
+	public String getCode() {
+		return code;
+	}
+
+
+	public void setCode(String code) {
+		this.code = code;
+	}
+
+
+	public Product() {
+		super();
+	}
+	
+	
+	
+	
+	
+	
+}

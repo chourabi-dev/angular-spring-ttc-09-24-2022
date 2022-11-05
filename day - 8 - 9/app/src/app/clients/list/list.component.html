@@ -1,0 +1,74 @@
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Clients</h1>
+    <a routerLink="/clients/add" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-plus fa-sm text-white-50"></i> Add new</a>
+</div>
+
+
+
+<div class="mt-5">
+    <div class="card">
+        <div class="card-body">
+
+            <div class="form-group">
+                <label for="">Search</label>
+                <input type="search" class="form-control" (keyup)="searchByCIN($event)">
+ 
+            </div>
+
+
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Fullname</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>CIN</th>
+                        <th>Vehicules</th>
+                        
+                        <th>Actions</th>
+                        
+                    </tr>
+                </thead>
+
+                <tbody *ngIf="isSearching == false">
+                    <tr *ngFor="let c of clients">
+                        <td>{{ c.id }}</td>
+                        <td>{{ c.fullname }}</td>
+                        <td>{{ c.email }}</td>
+                        <td>{{ c.address }}</td>
+                        <td>{{ c.cin }}</td>
+                        <td>
+                            <ul>
+                                <li *ngFor="let v of c.vehicules"><a href="#">{{ c.mark }} {{ v.model }}</a></li>
+                            </ul>
+                        </td>
+                        <td>
+                            <button class="btn btn-sm btn-secondary me-2" style="margin-right: 25px;"  [routerLink]="'/clients/update/'+c.id"  >update</button>
+
+                            <button class="btn btn-sm btn-danger" (click)="deleteClient(c.id)">delete</button>
+                        </td>
+                        
+
+                    </tr>
+                </tbody>
+
+                <tbody *ngIf="isSearching == true">
+                    <tr *ngFor="let c of clientsSearchArray">
+                        <td>{{ c.id }}</td>
+                        <td>{{ c.fullname }}</td>
+                        <td>{{ c.email }}</td>
+                        <td>{{ c.address }}</td>
+                        <td>{{ c.cin }}</td>
+                        <td>
+                            
+                        </td>
+                        
+
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
