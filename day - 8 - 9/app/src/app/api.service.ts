@@ -56,4 +56,28 @@ export class ApiService {
     return this.http.get(this.server+'/api/employees/list')
   }
 
+
+  /********************************************************** */
+
+
+  getInterventionByVehiculeID(id){
+    return this.http.get(this.server+'/api/interventions/list/vehicule/'+id)
+  }
+
+
+  
+  addIntervention(body){
+    return this.http.post(this.server+'/api/interventions/add',body)
+  }
+
+
+  getEmployees(){
+    return this.http.get(this.server+'/api/interventions/employees')
+  }
+
+  getCategories(){ 
+    return this.http.get(this.server+'/api/interventions/categories')
+  }
+
+
 }
